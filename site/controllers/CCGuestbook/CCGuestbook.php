@@ -33,7 +33,7 @@ class CCGuestbook extends CObject implements IController {
   	 */
 	public function Handler() {
     	if(isset($_POST['doAdd'])) {
-      		$this->guestbookModel->Add(strip_tags($_POST['newEntry']));
+      		$this->guestbookModel->Add(strip_tags($_POST['name']), strip_tags($_POST['message']));
     	}
     	elseif(isset($_POST['doClear'])) {
       		$this->guestbookModel->DeleteAll();
